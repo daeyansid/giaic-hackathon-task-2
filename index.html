@@ -1,0 +1,125 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Resume Builder</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">
+                <i class="fas fa-file-alt"></i>
+                <h1>Resume Builder</h1>
+            </div>
+            
+            <div class="nav-sections">
+                <div class="progress-bar">
+                    <div class="progress" id="progressBar"></div>
+                </div>
+                
+                <div class="nav-item active" data-section="personalInfo">
+                    <i class="fas fa-user"></i>
+                    <span>Personal Info</span>
+                    <div class="completion-indicator"></div>
+                </div>
+                
+                <div class="nav-item" data-section="education">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Education</span>
+                    <div class="completion-indicator"></div>
+                </div>
+                
+                <div class="nav-item" data-section="experience">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Experience</span>
+                    <div class="completion-indicator"></div>
+                </div>
+                
+                <div class="nav-item" data-section="skills">
+                    <i class="fas fa-tools"></i>
+                    <span>Skills</span>
+                    <div class="completion-indicator"></div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button id="saveBtn" class="primary-btn" title="Save your progress">
+                    <i class="fas fa-save"></i> Save Resume
+                </button>
+                <!-- <button id="printBtn" class="secondary-btn" title="Export as PDF">
+                    <i class="fas fa-file-pdf"></i> Export PDF
+                </button> -->
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div id="resumePreview">
+                <!-- Personal Info Section -->
+                <div id="personalInfo" class="section">
+                    <h2><i class="fas fa-user"></i> Personal Information</h2>
+                    <div class="info-grid">
+                        <div class="input-group">
+                            <i class="fas fa-user-circle"></i>
+                            <input type="text" id="fullName" placeholder="Full Name">
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" placeholder="Email">
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-phone"></i>
+                            <input type="tel" id="phone" placeholder="Phone">
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <textarea id="address" placeholder="Address"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Section -->
+                <div id="education" class="section">
+                    <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                    <div id="educationList" class="card-list">
+                        <!-- Education items will be inserted here -->
+                    </div>
+                    <button id="addEducation" class="add-btn">
+                        <i class="fas fa-plus"></i> Add Education
+                    </button>
+                </div>
+
+                <!-- Experience Section -->
+                <div id="experience" class="section">
+                    <h2><i class="fas fa-briefcase"></i> Experience</h2>
+                    <div id="experienceList" class="card-list">
+                        <!-- Experience items will be inserted here -->
+                    </div>
+                    <button id="addExperience" class="add-btn">
+                        <i class="fas fa-plus"></i> Add Experience
+                    </button>
+                </div>
+
+                <!-- Skills Section -->
+                <div id="skills" class="section">
+                    <h2><i class="fas fa-tools"></i> Skills</h2>
+                    <div class="input-group">
+                        <input type="text" id="skillInput" placeholder="Add a skill">
+                            <!-- <button id="addSkill" class="add-btn">
+                                <i class="fas fa-plus"></i>
+                            </button> -->
+                            <button id="addSkill" class="add-btn">
+                                Add Skill
+                            </button>
+                    </div>
+                    <div id="skillsList" class="skills-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
